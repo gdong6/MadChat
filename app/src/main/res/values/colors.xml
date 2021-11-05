@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="UWred">#c5050c</color>
+    <color name="richBlack">#010203</color>
 </resources>
