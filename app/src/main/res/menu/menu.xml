@@ -12,6 +12,6 @@
         android:icon="@drawable/ic_home"/>
     <item
         android:id="@+id/meIcon"
-        android:title="Item"
+        android:title="Me"
         android:icon="@drawable/ic_me"/>
 </menu>

@@ -3,9 +3,11 @@ package com.example.madchat;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.madchat.ui.login.LoginActivity;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,7 +21,12 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomnav);
         bottomNavigationView.setOnItemSelectedListener(bottomnavFunction);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, new Chat()).commit();
+        //仅用于Login部分测试，可以删掉==========
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        //===================================
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, new Chat()).commit(); //打开的第一个界面
     }
 
     private NavigationBarView.OnItemSelectedListener bottomnavFunction = new NavigationBarView.OnItemSelectedListener() {
