@@ -1,14 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Me">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#eee"
+    android:orientation="vertical" >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:background="#F44336"
+        android:gravity="center_horizontal|center_vertical">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Setting"
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <!--   ***********************************************************************   -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ib"
+                android:layout_width="83dp"
+                android:layout_height="72dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/user"
+                android:translationX="3dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello, Username"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:translationX="20dp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/SrelativeLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="69dp"
+            android:clickable="true"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/splash_imageview1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dip"
+                android:background="#3E000000"
+                android:padding="12dip"
+                android:text="personal profile"
+                android:textColor="#ffffffff" />
+        </RelativeLayout>
+        <!--   ***********************************************************************   -->
+        <RelativeLayout
+            android:id="@+id/SrelativeLayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="75dp"
+            android:layout_marginTop="14dp"
+            android:clickable="true"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/splash_imageview2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dip"
+                android:background="#3E000000"
+                android:padding="12dip"
+                android:text="calender"
+                android:textColor="#ffffffff" />
+        </RelativeLayout>
+        <!--   ***********************************************************************   -->
+        <RelativeLayout
+            android:id="@+id/SrelativeLayout5"
+            android:layout_width="fill_parent"
+            android:layout_height="79dp"
+            android:clickable="true"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/splash_imageview3"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dip"
+                android:background="#3E000000"
+                android:padding="12dip"
+                android:text="study record"
+                android:textColor="#ffffffff" />
+        </RelativeLayout>
+        <!--   ***********************************************************************   -->
+        <RelativeLayout
+            android:id="@+id/SrelativeLayout6"
+            android:layout_width="fill_parent"
+            android:layout_height="81dp"
+            android:layout_marginTop="14dp"
+            android:clickable="true"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/splash_imageview4"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dip"
+                android:background="#3E000000"
+                android:padding="12dip"
+                android:text="Timer"
+                android:textColor="#ffffffff" />
+        </RelativeLayout>
+        <!--   ***********************************************************************   -->
+        <RelativeLayout
+            android:id="@+id/SrelativeLayout7"
+            android:layout_width="fill_parent"
+            android:layout_height="86dp"
+            android:layout_marginTop="14dp"
+            android:clickable="true"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/splash_imageview5"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dip"
+                android:background="#3E000000"
+                android:padding="12dip"
+                android:text="share"
+                android:textColor="#ffffffff" />
+        </RelativeLayout>
+
+
+        <!--   ********************************************************************   -->
+
+
+        <Button
+            android:id="@+id/Sbtn_close"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#F44336"
+            android:gravity="center"
+            android:onClick="exit_settings"
+            android:padding="4dp"
+            android:text="log out"
+            android:textColor="#fff"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>

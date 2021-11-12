@@ -1,5 +1,6 @@
 package com.example.madchat;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,58 +8,84 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.Toast;
+import android.view.View.OnClickListener;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Home#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class Home extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+public class Home extends Fragment implements OnClickListener {
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
+    SwipeAdapter mAdapter;
     public Home() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Home.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Home newInstance(String param1, String param2) {
-        Home fragment = new Home();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+    View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+
+    SwipeListView mListView = (SwipeListView)view.findViewById(R.id.mListView);
+    final List<WXMessage> data = new ArrayList<WXMessage>();
+    WXMessage msg1 = null;
+    WXMessage msg2 = null;
+    msg1 = new WXMessage("CS407", " i've finished my page'", "8:44am");
+        msg1.setIcon_id(R.drawable.chat1);
+
+        msg2 = new WXMessage("Math535", " we have an exam next week", "18:35pm");
+        msg2.setIcon_id(R.drawable.chat2);
+        data.add(msg1);
+        data.add(msg2);
+
+
+
+
+
+    mAdapter = new SwipeAdapter(view.getContext(),data);
+
+        mAdapter.setOnRightItemClickListener(new SwipeAdapter.onRightItemClickListener() {
+
+        @Override
+        public void onRightItemClick(View v, int position) {
+
+            Toast.makeText(v.getContext(), "delete  " + (position+1)+"th dialog", Toast.LENGTH_SHORT).show();
+            data.remove(position);
+            mAdapter.notifyDataSetChanged();
+
+        }
+    });
+
+
+        mAdapter.setOnLeftItemClickListener(new SwipeAdapter.onLeftItemClickListener() {
+
+
+        public void onLeftItemClick(View v, int position) {
+
+            Intent intent = new Intent();
+            intent.setAction("abc");         //跳转到聊天窗口，在AndroidManifest.xml文件里需要有相应代码呼应
+            startActivity(intent);
+
+
+        }
+    });
+
+
+        mListView.setAdapter(mAdapter);
+
+
+        return view;
+}
+
+    @Override
+    public void onClick(View view) {
+
     }
 }
