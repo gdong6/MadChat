@@ -1,5 +1,7 @@
 package com.example.madchat.data;
 
+import android.widget.Toast;
+
 import com.example.madchat.data.model.LoggedInUser;
 
 import java.io.IOException;
@@ -16,7 +18,8 @@ public class LoginDataSource {
             LoggedInUser fakeUser =
                     new LoggedInUser(
                             java.util.UUID.randomUUID().toString(),
-                            "username");
+                            username);
+
             return new Result.Success<>(fakeUser);
         } catch (Exception e) {
             return new Result.Error(new IOException("Error logging in", e));
@@ -24,6 +27,6 @@ public class LoginDataSource {
     }
 
     public void logout() {
-        logout();
+
     }
 }
